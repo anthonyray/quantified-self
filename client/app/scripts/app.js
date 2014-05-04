@@ -9,12 +9,25 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/sugar', {
-        templateUrl: 'views/sugar.html',
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
         controller: 'MainCtrl'
       })
-      .when('/feed',{
-        templateUrl : 'views/'
+      .when('/explore', {
+        templateUrl : 'views/explore.html',
+        controller : 'MainCtrl'
+      }).
+      when('/feed', {
+        templateUrl : 'views/feed.html',
+        controller : 'MainCtrl'
+      }).
+      when('/sugar', {
+        templateUrl : 'views/sugar.html',
+        controller: 'MainCtrl'
+      }).
+      when('/', {
+        templateUrl : 'views/main.html',
+        controller : 'MainCtrl'
       })
       .otherwise({
         redirectTo: '/'

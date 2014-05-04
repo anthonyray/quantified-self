@@ -5,6 +5,10 @@ var Sugar = require('../data/models/sugar');
 var Coffee = require('../data/models/coffee');
 var Mood = require('../data/models/mood');
 
+/*
+* API
+*/
+
 /* Mood */
 
 router.get('/api/mood', function(req, res) {
@@ -38,6 +42,7 @@ router.get('/api/sugar', function(req,res){
 });
 
 router.get('/api/sugar/:date', function(req,res){
+	
 	var helper = new Date(req.params.date);
 	var start = new Date(helper.getFullYear(), helper.getMonth(), helper.getDate() );
 	var end = new Date();
@@ -87,4 +92,14 @@ router.post('/api/coffee', function(req, res) {
 	}	
 });
 
+
+/*
+* PAGES
+*/
+
+router.get('/', function(req,res){
+	res.sendfile('index');
+});
+
 module.exports = router;
+
